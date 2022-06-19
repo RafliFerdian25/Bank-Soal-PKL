@@ -1,0 +1,569 @@
+/*******************************************/
+/*                FONT                     */
+/*******************************************/
+
+@import url(../vendor/fonts/fonts.css);
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+
+/****************************************/
+/*               VARIABLE               */
+/****************************************/
+:root {
+    /*height and width*/
+
+    /*color*/
+    --white: rgba(255, 255, 255, 1);
+    --black: rgba(0, 0, 0, 1);
+    --scnd-light: rgba(240, 240, 240);
+    --blue1: rgba(21, 114, 161, 1);
+    --blue2: rgba(154, 208, 236, 1);
+    --blue3: rgb(31, 153, 214);
+    --abu: rgba(0, 0, 0, 0.5);
+
+    /*font and typography*/
+    --reg-size: 16px;
+    --medium-size: 18px;
+    --big-size: 24px;
+
+    --head-font: "PT Sans", sans-serif;
+    --body-font: "Plus Jakarta Sans", sans-serif;
+
+    /*padding and margin*/
+    --m-min: 4.5rem;
+    --m-max: 6.25rem;
+    --mx-min: 0 4.5rem;
+    --mx-max: 0 6.25rem;
+
+    /*utility-radius*/
+    --sm-rad: 0;
+
+    --global-trans: all 0.3s ease-in-out;
+}
+
+/*********************************************/
+/*               GENERAL STYLE               */
+/*********************************************/
+* {
+    font-family: var(--body-font);
+    font-weight: 400;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    color: black;
+}
+.min-w__20{
+    min-width: 20rem !important;
+}
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: var(--head-font);
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: var(--head-font);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+h4 {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: 18px;
+}
+
+.fw__r {
+    font-weight: 400 !important;
+}
+
+.fw__m {
+    font-weight: 500 !important;
+}
+
+.fw__sb {
+    font-weight: 600 !important;
+}
+
+.fw__bb {
+    font-weight: 700 !important;
+}
+
+.blok-full {
+    padding: var(--m-min) var(--m-max);
+}
+
+.blok-y {
+    padding: var(--m-min) 0;
+}
+
+.blok-y-max {
+    padding: var(--m-max) 0;
+}
+
+.blok-t {
+    padding-top: var(--m-min);
+}
+
+.blok-x {
+    padding: var(--mx-max);
+}
+
+.bg__blue {
+    background-color: var(--blue1);
+}
+
+.bg__img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mx__max {
+    margin: var(--mx-max);
+}
+
+.mx__min {
+    margin: var(--mx-min);
+}
+
+/* Font */
+.text__white {
+    color: var(--white) !important;
+}
+
+.text__blue1 {
+    color: var(--blue1) !important;
+}
+
+.btn-primary {
+    background-color: var(--blue1);
+}
+
+.px-100 {
+    padding: 0 100px;
+}
+
+.card {
+    box-shadow: 2px 6px 15px 0px rgb(69 65 78 / 10%);
+}
+
+.btn-primary:hover {
+    background-color: var(--blue3) !important;
+}
+
+.vl {
+    height: 100%;
+    margin: 0 2rem 0 3rem;
+
+    border-left: 4px solid rgba(0, 0, 0, 1);
+}
+
+.required-label {
+    color: red;
+}
+
+.card-action {
+    border-top: 3px solid rgba(0, 0, 0, 0.104);
+}
+
+.fs-7 {
+    font-size: 14px !important;
+}
+
+.btn-submit {
+    padding: 14px 24px;
+}
+
+.text__abu {
+    color: rgba(0, 0, 0, 0.4);
+}
+.btn:focus{
+    box-shadow: none !important;
+}
+/*********************************************/
+/*               NAVBAR                      */
+/*********************************************/
+.navbar__logo {
+    height: 40px;
+}
+.nav-item .dropdown-menu,
+.nav-item .dropdown-menu[data-bs-popper] {
+    right: 0 !important;
+    left: -125px;
+}
+#navbar {
+    position: fixed;
+    z-index: 1;
+    /* Make it stick/fixed */
+    top: 0;
+    /* Stay on top */
+    width: 100%;
+    /* Full width */
+    transition: top 0.3s;
+    /* Transition effect when sliding down (and up) */
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li .active {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    color: var(--blue1) !important;
+}
+
+.navbar-nav li a {
+    transition: background-color .5s,
+        border-radius .5s,
+        color .3s;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    transition: display .5s;
+}
+
+.nav-item p {
+    margin-bottom: 0;
+}
+.btn-modal:hover{
+    color: var(--blue1);
+    text-decoration: underline;
+}
+.kembali{
+    /* display: none; */
+    text-align: end;
+}
+/*********************************************/
+/*               LOGIN                       */
+/*********************************************/
+.login__logo {
+    height: 64px;
+}
+
+.login__img,
+.login__img .bg__img {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--black);
+}
+
+.login__section {
+    height: 100%;
+}
+
+.login__kiri {
+    padding: 48px;
+    padding-bottom: 24px;
+}
+
+.login__judul {
+    margin-bottom: 24px;
+}
+
+.form-floating .form-control {
+    border-radius: 16px !important;
+}
+
+.login__section {
+    max-width: 92rem;
+}
+
+.login__footer {
+    bottom: 0;
+}
+.reset__img{
+    background-image: url('/assets/images/bg-1.png');
+}
+.bg__reset{
+    background-color: #3791bf;
+}
+.bg__reset .card-header, .bg__reset p, .bg__reset label{
+    color: white;
+}
+.bg__reset .btn-primary{
+    background-color: #3791bf !important;
+    border-color: white !important;
+}
+.blok-reset{
+    padding: 80px 100px;
+}
+.submit-reset:hover{
+    background-color: white !important;
+    color: var(--blue1);
+    border-color: var(--blue1);
+}
+/*********************************************/
+/*               DATATABLE                   */
+/*********************************************/
+.table.dataTable.no-footer {
+    border-bottom: hidden !important;
+}
+
+.table.dataTable {
+    background-color: transparent !important;
+    border-spacing: none;
+    padding: 3rem 0 !important;
+}
+
+tbody {
+    border-style: 1px solid var(--white);
+}
+
+.paginate_button {
+    border: 1px solid var(--blue1) !important;
+    border-radius: 50rem !important;
+}
+
+.table>tbody {
+    vertical-align: initial !important;
+}
+.paginate_button:hover {
+    background: var(--blue1) !important;
+    color: white !important;
+}
+/*********************************************/
+/*               SOAL                        */
+/*********************************************/
+.peran{
+    padding-left: 0;
+}
+.peran .btn-primary{
+    background-color: transparent !important;
+    color: var(--blue1);
+    border: 2px solid var(--blue1);
+}
+.peran .btn-check:checked+.btn-primary {
+    background-color: var(--blue1) !important;
+}
+.accordion-button{
+    border: 2px solid var(--blue1);
+    border-radius: 20px !important;
+}
+.accordion-item{
+    border: none !important;
+}
+.align-center-webkit{
+    text-align: -webkit-center;
+}
+.soal__soal{
+    text-align: justify;
+}
+.img__404__materi{
+    background-image: url('/assets/images/pensil-1.jpg');
+    background-position: bottom;
+}
+.materi__404{
+    color: rgb(85, 0, 0);
+}
+.accordion-button{
+    position: static;
+}
+/*********************************************/
+/*               SEKOLAH                     */
+/*********************************************/
+.table__sekolah .card-header {
+    background-color: white;
+    padding: 16px 20px;
+}
+
+.btn-p {
+    padding: 16px 20px;
+    border: none;
+}
+
+.btn-p1 {
+    padding: 8px 20px;
+    border: none;
+
+}
+
+.form-button-action {
+    display: inline-flex;
+}
+
+/* Detail sekolah */
+.detail__logo {
+    max-height: 240px;
+}
+
+.back {
+    font-size: 16px;
+    transition: color .3s;
+    padding: 5px;
+}
+
+.back:hover {
+    color: var(--blue1);
+    transition: color .5s ease-in-out;
+}
+
+.detail__sekolah .blok-judul {
+    padding: 32px;
+}
+
+/*********************************************/
+/*               GURU                        */
+/*********************************************/
+.detail {
+    border: 1px solid var(--blue1);
+    border-radius: 50rem;
+    font-size: 14px;
+    padding: 0px 16px;
+    margin: 6px 0;
+}
+
+.detail:hover {
+    background-color: var(--blue1);
+    color: white;
+    transition: background-color .5s, color .5s;
+}
+
+/*********************************************/
+/*               SOAL                        */
+/*********************************************/
+.soal__collapse.card {
+    background-color: var(--blue2) !important;
+    padding: 16px 16px;
+}
+
+.soal__collapse p {
+    margin: 0;
+}
+
+.soal__img {
+    max-height: 250px;
+}
+
+.tambah__materi {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.tambah__materi:hover {
+    background-color: var(--blue1);
+    color: white;
+    transition: background-color .5s,
+        color .3s;
+}
+#alert_materi {
+    display: none;
+}
+
+/*******************************************/
+/*               RESPONSIVES               */
+/*******************************************/
+/*=============== tablet view ===============*/
+@media (max-width: 991px) {
+
+    /*********************************************/
+    /*               LOGIN                       */
+    /*********************************************/
+    .login__kiri {
+        padding: 36px;
+    }
+
+    .blok-beranda {
+        padding: 24px;
+    }
+
+    .blok-judul {
+        padding: 48px;
+    }
+    .blok-reset{
+        padding: 100px 50px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /*********************************************/
+    /*               LOGIN                       */
+    /*********************************************/
+    .login__kiri {
+        padding: 24px;
+    }
+
+    .navbar .mx__max {
+        margin: 0 1rem;
+    }
+
+    .blok-beranda h1 {
+        font-size: 1.875rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: inherit;
+    }
+    /*********************************************/
+    /*               SOAL                        */
+    /*********************************************/
+    .edit__soal .back-full{
+        display: none;
+    }
+    .edit__soal .kembali{
+        display: block;
+    }
+}
+
+/*=============== phone view ===============*/
+@media (max-width: 576px) {
+
+    /*********************************************/
+    /*               LOGIN                       */
+    /*********************************************/
+    .login__judul {
+        display: block !important;
+        text-align: center;
+    }
+
+    .login__footer {
+        padding-top: 64px;
+    }
+
+    .login__form {
+        text-align: center;
+    }
+
+    .blok-beranda .col-12 {
+        margin-bottom: 1rem;
+    }
+
+    /*********************************************/
+    /*               DataTable                   */
+    /*********************************************/
+    .btn-p {
+        padding: 8px 4px;
+    }
+    .kembali{
+        display: block;
+    }
+    .back-full{
+        display: none;
+    }
+}
