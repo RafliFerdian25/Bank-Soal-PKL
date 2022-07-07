@@ -47,7 +47,7 @@ class Soal extends BaseController
         // dd($materi_mapel);
         //mengambil seluruh data soal pada mapel tertentu
         // dan group admin
-        if (in_groups('admin')) {
+        if (in_groups('admin') || in_groups('mgmp')) {
             foreach ($materi_mapel as $materi) {
                 $query_soal = $this->soalModel->find_soal($materi['id_materi'],  $semester);
                 $soal[] = $query_soal->getResultArray();
@@ -149,8 +149,8 @@ class Soal extends BaseController
         // apakah tidak ada gambar soal yang di upload
         if ($soal_img->getError() != 4) {
             // pindahkan file ke folder image
-            $nama_soal_img = $soal_img->getName();
-            $soal_img->move('assets/images/soal');
+            $nama_soal_img = $soal_img->getRandomName();
+            $soal_img->move('assets/images/soal', $nama_soal_img);
         } else {
             $nama_soal_img = null;
         }
@@ -160,8 +160,8 @@ class Soal extends BaseController
         // apakah tidak ada scan alasan jawaban yang di upload
         if ($alasan_jawaban_img->getError() != 4) {
             // pindahkan file ke folder image
-            $nama_alasan_jawaban_img = $alasan_jawaban_img->getName();
-            $alasan_jawaban_img->move('assets/images/soal');
+            $nama_alasan_jawaban_img = $alasan_jawaban_img->getRandomName();
+            $alasan_jawaban_img->move('assets/images/soal', $nama_alasan_jawaban_img);
         } else {
             $nama_alasan_jawaban_img = null;
         }
@@ -330,7 +330,7 @@ class Soal extends BaseController
             }
         } else {
             //mengambil nama dari gambar soal yang diinput
-            $nama_soal_img = $soal_img->getName();
+            $nama_soal_img = $soal_img->getRandomName();
             // pindahkan file ke folder image
             $soal_img->move('assets/images/soal', $nama_soal_img);
             if ($gambar_Lama != null) {
@@ -352,7 +352,7 @@ class Soal extends BaseController
             }
         } else {
             //mengambil nama dari scan alasan jawaban yang diinput
-            $nama_alasan_jawaban_img = $alasan_jawaban_img->getName();
+            $nama_alasan_jawaban_img = $alasan_jawaban_img->getRandomName();
             // pindahkan file ke folder image
             $alasan_jawaban_img->move('assets/images/soal', $nama_alasan_jawaban_img);
             if ($alasan_jawaban_img_Lama != null) {
@@ -409,11 +409,16 @@ class Soal extends BaseController
         }
         // menghitung jumlah soal
         // $soal_acak = null;
-        // dd($materi);
         foreach ($materi as $materi) {
             $materi_acak_soal = $this->request->getVar('materi_' .  $materi['id_materi']);
+            // dd($materi_acak_soal);
             if ($materi_acak_soal == 'materi_' . $materi['id_materi']) {
                 $jumlah_soal = $this->request->getVar("jumlah_cetak_soal_" . $materi["id_materi"]);
+                // dd($jumlah_soal);
+                // if jumlah soal '0' maka tidak akan dicetak
+                if ($jumlah_soal == '') {
+                    $jumlah_soal = 0;
+                }
                 // mengambil soal acak dari materi tertentu
                 $soal = $this->soalModel->acak_soal($materi['id_materi'], $jumlah_soal);
                 foreach ($soal as $soal_materi) {
@@ -435,13 +440,13 @@ class Soal extends BaseController
                     $this->CetakModel->insert($soal_acak);
                 }
             }
-            // dd($soal_acak);
         }
+        // dd($materi_acak_soal);
         // $data = [
         //     'title' => 'Bank Soal | Cetak Soal',
         //     'soal' => $soal_acak
         // ];
-        return redirect()->to('soal/daftar_soal/' . $id_mapel . '/', $semester);
+        return redirect()->to('soal/daftar_soal/' . $id_mapel . '/'. $semester);
         // return view('a dmin/cetak_soal', $data);
     }
     public function cetak_soal()
@@ -466,11 +471,13 @@ class Soal extends BaseController
     }
     public function edit_status_soal($id_soal)
     {
-        $soal = $this->soalModel->find_detail_soal($id_soal);
         $data = [
             'id_status_soal'    => $this->request->getVar('status_soal')
         ];
         $this->soalModel->update($id_soal, $data);
-        return redirect()->to('soal/daftar_soal/' . $soal['id_mapel']);
+
+        session()->setFlashdata('pesan-edit-soal', 'Status Soal berhasil diubah.');
+
+        return redirect()->to('soal/detail_soal/' . $id_soal);
     }
 }

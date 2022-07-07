@@ -52,8 +52,8 @@
                         <div class="form-floating">
                             <input type="password" id="password" name="password"
                                 class="form-control  <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>"
-                                placeholder="<?= lang('Auth.password') ?>">
-                            <label for="password"><?= lang('Auth.password') ?></label>
+                                placeholder="Kata sandi">
+                            <label for="password">Kata sandi</label>
                             <div class="invalid-feedback">
                                 <?= session('errors.password') ?>
                             </div>

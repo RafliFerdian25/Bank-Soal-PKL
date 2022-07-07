@@ -148,22 +148,34 @@ class User extends BaseController
         } else {
             $rules_email = 'required|valid_email|is_unique[users.email]';
         }
-        // Validasi
-        if (!$this->validate([
-            'email'     => $rules_email,
-            'username' =>  $rules_username,
-        ])) {
-            return redirect()->to('user/edit_akun/' . $user_id)->withInput();
-        }
         $peran = $this->request->getVar('peran');
+        if ($peran == 2) {
+            if (!$this->validate([
+                'email'     => $rules_email,
+                'username' =>  $rules_username,
+                'nuptk' =>  'required',
+            ])) {
+                return redirect()->to('user/edit_akun/' . $user_id)->withInput();
+            }
+            
+        } else {
+            if (!$this->validate([
+                'email'     => $rules_email,
+                'username' =>  $rules_username,
+            ])) {
+                return redirect()->to('user/edit_akun/' . $user_id)->withInput();
+            }
+        }
+        // dd($rules_nuptk);
+        // Validasi
         $mapel_mgmp = $this->request->getVar('mapel_mgmp');
         // dd($mapel_mgmp);
         if ($peran == 2) {
             $this->db->query("UPDATE `users` SET `email` = '$email', `username`='$username', `nuptk`='$nuptk' WHERE `users`.`id` = $user_id");
         } elseif ($peran == 3) {
-            $this->db->query("UPDATE `users` SET `email` = '$email', `username`='$username', `id_mgmp`='$mapel_mgmp' WHERE `users`.`id` = $user_id");
+            $this->db->query("UPDATE `users` SET `email` = '$email', `username`='$username', `nuptk`= null, `id_mgmp`='$mapel_mgmp' WHERE `users`.`id` = $user_id");
         } else {
-            $this->db->query("UPDATE `users` SET `email` = '$email', `username`='$username' WHERE `users`.`id` = $user_id");
+            $this->db->query("UPDATE `users` SET `email` = '$email', `username`='$username' `nuptk`= null, WHERE `users`.`id` = $user_id");
         }
         // update group user
         $this->db->query("UPDATE `auth_groups_users` SET `group_id`= $peran ,`user_id`= $user_id WHERE user_id = $user_id");

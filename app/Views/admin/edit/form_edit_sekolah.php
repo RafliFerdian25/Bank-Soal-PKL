@@ -86,7 +86,7 @@
                     </div>
                     <!-- end alamat -->
                     <div class="mb-3 row">
-                        <label for="email" class="col-md-2 text-md-end col-form-label">Alamat Email Sekolah <span class="required-label">*</span> </label>
+                        <label for="email" class="col-md-2 text-md-end col-form-label">Alamat Email Sekolah </label>
                         <div class="col-lg-9 col-md-10">
                             <input type="email" name="email" value="<?= $sekolah['email']; ?>" class="form-control rounded-3 <?= ($validation->hasError('email')) ? 'is-invalid' : ''; ?> <?= ($validation->getError('email') == '') ? 'm-6' : 'is-invalid'; ?>" id="email" aria-describedby="email-feedback">
                             <div class="invalid-feedback" id="email-feedback">
@@ -98,7 +98,6 @@
                     <!-- end email sekolah -->
                     <div class="mb-3 row">
                         <label class="col-md-2 text-md-end align-self-center form-label">Logo Sekolah
-                            <span class="required-label">*</span>
                         </label>
                         <div class=" col-lg-9 col-md-10">
                             <div class="input-file input-file-image">

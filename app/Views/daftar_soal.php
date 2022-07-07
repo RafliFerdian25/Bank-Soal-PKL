@@ -252,13 +252,13 @@
                     <button type="submit" id="submit_cetak_soal" class="btn btn-primary">Acak Soal</button>
                     <button <?= ($soal_cetak == null) ? 'disabled' : ''; ?> type="button" id="submit_cetak_soal"
                         class="btn btn-primary">
-                        <a class="text-white" href="<?= base_url(); ?>/soal/cetak_soal">
+                        <a class="text-white" target="_blank" href="<?= base_url(); ?>/soal/cetak_soal">
                             Cetak soal
                         </a>
                     </button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
                         <?= ($soal_cetak == null) ? 'disabled' : ''; ?>>
-                        <a class="text-white" href="<?= base_url(); ?>/soal/cetak_kunci_jawaban">Cetak kunci
+                        <a class="text-white" target="_blank" href="<?= base_url(); ?>/soal/cetak_kunci_jawaban">Cetak kunci
                             jawaban
                         </a>
                     </button>

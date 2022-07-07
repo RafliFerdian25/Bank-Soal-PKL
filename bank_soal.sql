@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2022 at 08:43 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Generation Time: Jul 04, 2022 at 04:55 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,7 +51,10 @@ INSERT INTO `auth_activation_attempts` (`id`, `ip_address`, `user_agent`, `token
 (9, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36', 'a32ab5899867b9d7e8bf74ecf8515817', '2022-03-16 22:58:03'),
 (10, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', '86a4139f2d470e4aa5dc7fefaa56c603', '2022-06-03 04:58:33'),
 (11, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', '851f7f4d46d0f391577073c7903f28c8', '2022-06-05 02:42:16'),
-(12, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', 'f11c47b6cd672ea89299b945c880b8cf', '2022-06-05 02:43:23');
+(12, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', 'f11c47b6cd672ea89299b945c880b8cf', '2022-06-05 02:43:23'),
+(13, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', '7762c8d5285afc1238296ca4d31dde96', '2022-06-24 02:14:39'),
+(14, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', '7762c8d5285afc1238296ca4d31dde96', '2022-06-24 02:14:47'),
+(15, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36', 'c199db25f886293fe304137f117d7038', '2022-06-24 19:19:34');
 
 -- --------------------------------------------------------
 
@@ -333,7 +336,38 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (189, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-05 06:39:12', 1),
 (190, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-05 19:14:28', 1),
 (191, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-05 19:19:10', 1),
-(192, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-05 23:11:54', 1);
+(192, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-05 23:11:54', 1),
+(193, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-19 03:11:16', 1),
+(194, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-19 17:24:53', 1),
+(195, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-19 18:10:29', 1),
+(196, '::1', 'admin1sdf', NULL, '2022-06-19 18:10:43', 0),
+(197, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-19 18:22:00', 1),
+(198, '::1', 'tokosundip@gmail.com', 21, '2022-06-19 21:22:47', 1),
+(199, '::1', 'tokosundip@gmail.com', 21, '2022-06-19 21:26:14', 1),
+(200, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-19 21:29:00', 1),
+(201, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-20 05:03:18', 1),
+(202, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-23 20:18:50', 1),
+(203, '::1', 'ferdianrafli32@gmail.com', 24, '2022-06-23 21:15:53', 1),
+(204, '::1', 'ferdianrafli32@gmail.com', 24, '2022-06-23 21:33:00', 1),
+(205, '::1', 'ferdianrafli32@gmail.com', 24, '2022-06-24 01:05:48', 1),
+(206, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 01:34:37', 1),
+(207, '::1', 'ferdianrafli25@gmail.com', 30, '2022-06-24 02:15:04', 1),
+(208, '::1', 'ferdianrafli32@gmail.com', 24, '2022-06-24 02:16:38', 1),
+(209, '::1', 'ferdianrafli32@gmail.com', 24, '2022-06-24 02:52:41', 1),
+(210, '::1', 'tokosundip@gmail.com', 21, '2022-06-24 03:10:53', 1),
+(211, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 03:14:31', 1),
+(212, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 06:33:59', 1),
+(213, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 09:38:16', 1),
+(214, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 18:51:08', 1),
+(215, '::1', 'ferdianrafli25@gmail.com', 32, '2022-06-24 19:19:40', 1),
+(216, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 19:20:00', 1),
+(217, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 19:41:34', 1),
+(218, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 20:02:54', 1),
+(219, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 21:01:13', 1),
+(220, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 21:03:51', 1),
+(221, '::1', 'ferdianrafli125@gmail.com', 4, '2022-06-24 21:21:16', 1),
+(222, '::1', 'tokosundip@gmail.com', 21, '2022-06-24 21:31:00', 1),
+(223, '::1', 'ferdianrafli32@gmail.com', 24, '2022-06-24 21:31:36', 1);
 
 -- --------------------------------------------------------
 
@@ -436,8 +470,11 @@ CREATE TABLE `guru` (
 --
 
 INSERT INTO `guru` (`nuptk`, `nip`, `npsn`, `nama_guru`, `id_mapel`) VALUES
-('1111222233334455', '112233445566778899', '11112222', 'Guru IPA 1', 24),
-('1122334455667788', '112233445566777788', '11112222', 'Guru IPS 1', 25),
+('1111111111111111', '111111111111111111', '20322707', 'Dico', 24),
+('1111222233334455', '112233445566778899', NULL, 'Guru IPA 1', 24),
+('1122334455667788', '112233445566777788', NULL, 'Guru IPS 1', 25),
+('1234512345123456', '123451234512345678', '20322722', 'Rafli Ferdian R', 24),
+('2222222222222222', '222222222222222222', '20322707', 'Alfian', 25),
 ('‌004674264430001', '‌19640714200604200', '20322771', 'Siti Fatkhurohmah', 25),
 ('‌005474965130007', '‌19710722200701200', '20322780', 'Erniyati', 25),
 ('‌015676967013013', 'null', '20322787', 'Saparwati', 24),
@@ -754,17 +791,15 @@ INSERT INTO `materi` (`id_materi`, `id_mapel`, `nama_materi`, `semester`) VALUES
 (17, 24, 'Gerak benda dan makhluk hidup', 1),
 (35, 24, 'Sistem Rangka, Sendi ,dan Otot', 1),
 (36, 24, 'Sistem Gerak pada Hewan dan Tumbuhan', 1),
-(37, 24, 'Bunyi', 2),
+(37, 24, 'Tekanan Zat dan Penerapannya dalam Kehidupan Sehari-hari', 2),
 (38, 25, 'Megalithikum', 1),
-(42, 24, 'Kecepatan', 2),
+(42, 24, 'Sistem Pernapasan Manusia', 2),
 (45, 25, 'Kemerdekaan', 1),
 (46, 25, 'Penjajahan', 2),
 (47, 25, 'Kerajaan di Indonesia', 2),
-(57, 24, 'Inersia', 2),
+(57, 24, 'Sistem Ekskresi Manusia', 2),
 (86, 24, 'Struktur dan Fungsi Tumbuhan', 1),
-(87, 24, 'Jaringan Tumbuhan, Akar, Batang, dan Daun', 1),
-(88, 24, 'Teknologi Terinspirasi dari Struktur Tumbuhan', 1),
-(89, 24, 'Sistem Pencernaan Manusia', 1);
+(103, 24, 'Getaran dan Gelombang dalam Kehidupan Sehari-hari', 2);
 
 -- --------------------------------------------------------
 
@@ -828,7 +863,7 @@ CREATE TABLE `sekolah` (
 --
 
 INSERT INTO `sekolah` (`npsn`, `nama_sekolah`, `alamat`, `email`, `logo_sekolah`) VALUES
-('11112222', 'SMP Negeri 50 Tulis', 'Tulis', 'tulis@gmail.com', 'logo-kemendikbud.png'),
+('11112222', 'SMP Negeri 123 Tulis ', 'Tulis Batang Jawa Tengah', 'batangjateng@gmail.com', 'logo-batang.png'),
 ('20322707', 'SMPN 1 Gringsing', 'Jl. Raya Kutosari Ds. Kutosari, Gringsing', NULL, 'logo-batang.png'),
 ('20322719', 'SMPN 1 Blado', 'Jl. Raya Blado No.1 Ds. Blado, Blado', NULL, 'logo-batang.png'),
 ('20322720', 'SMPN 1 Bawang', 'Jl. Desa Panempon, Bawang', NULL, 'logo-batang.png'),
@@ -909,12 +944,46 @@ CREATE TABLE `soal` (
 --
 
 INSERT INTO `soal` (`id_soal`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `jawaban`, `soal_img`, `alasan_jawaban`, `tgl_input`, `id_materi`, `nuptk`, `alasan_jawaban_img`, `id_status_soal`) VALUES
-(97, 'jarak yang ditempuh jika mobil berkecepatan 40 km/jam dengan waktu 1 jam', '10 km', '20 km', '30 km', '40 km', 'D', NULL, 'S = V x T', '2022-06-04', 42, NULL, NULL, 2),
+(97, 'jarak yang ditempuh jika mobil berkecepatan 40 km/jam dengan waktu 1 jam', '10 km', '20 km', '30 km', '40 km', 'D', '', 'S = V x T', '2022-06-04', 17, NULL, '', 2),
 (100, 'Sebuah mobil dengan kecepatan 72 km/jam. Kecepatan mobil tersebut jika dinyatakan dalam SI adalah ….', '2 m/s', '20 m/s', '200 m/s', '1.800 m/s', 'B', NULL, '-', '2022-06-06', 17, NULL, NULL, 2),
 (101, 'Jarak dari kota A ke kota B adalah 115 km. Pak Budi berangkat dari kota A pukul 09.00 menuju kota B menggunakan kendaraan dengan kecepatan 50 km/jam. Pak Budi akan sampai ke kota B pada pukul ….', '11.15', '11.18', '11.20', '11.30', 'A', NULL, '-', '2022-06-06', 17, NULL, NULL, 2),
 (102, 'Gerak benda yang mengalami perlambatan  …', 'kelajuannya berkurang dengan cara tidak teratur', 'kelajuannya berkurang dengan teratur', 'kelajuannya tidak berpengaruh', 'tidak akan pernah berhenti', 'A', NULL, '-', '2022-06-06', 17, NULL, NULL, 2),
 (103, 'Berdasarkan morfologi dan fungsinya, jaringan otot pada manusia dibagi menjadi 3 yaitu ….', 'otot lurik, otot jantung dan otot serat lintang', 'otot jantung, otot lurik dan otot bergaris', 'otot lurik, otot polos dan otot jantung', 'miofibril, otot volunter dan otot involunter ', 'C', NULL, '-', '2022-06-06', 35, NULL, NULL, 2),
-(104, 'Daniel sedang mengamati awetan preparat dinding usus halus hewan sapi. Pada pengamatannya didapatkan bahwa awetan tersebut tersusun atas sel yang berbentuk gelendong dengan ujung yang meruncing, dan juga memiliki nukleus yang berada ditengah sel. Berikut ini preparat yang memiliki struktur yang hampir sama dengan struktur dinding usus halus sapi diatas adalah ….', 'Dinding organ jantung', 'Otot bisep pada manusia', 'Sfingter anus', 'Dinding lambung', 'D', NULL, '-', '2022-06-06', 35, NULL, NULL, 2);
+(104, 'Daniel sedang mengamati awetan preparat dinding usus halus hewan sapi. Pada pengamatannya didapatkan bahwa awetan tersebut tersusun atas sel yang berbentuk gelendong dengan ujung yang meruncing, dan juga memiliki nukleus yang berada ditengah sel. Berikut ini preparat yang memiliki struktur yang hampir sama dengan struktur dinding usus halus sapi diatas adalah ….', 'Dinding organ jantung', 'Otot bisep pada manusia', 'Sfingter anus', 'Dinding lambung', 'D', NULL, '-', '2022-06-06', 35, NULL, NULL, 2),
+(105, 'Organ gerak terbagi dua yaitu organ gerak....', 'aktif dan non pasif', 'aktif dan pasif', 'aktif dan non aktif', 'pasif dan non pasif', 'B', NULL, '--', '2022-06-20', 36, NULL, NULL, 2),
+(106, 'Hewan vertebrata adalah....', 'hewan yang memiliki tulang belakang', 'hewan yang tidak mempunyai tulang belakang', 'hewan yang memilki tulang leher', 'hewan yang mempunyai ekor', 'A', NULL, '-', '2022-06-20', 36, NULL, NULL, 2),
+(109, 'Seseorang anak mengendarai sepeda menempuh jarak 100 meter dalam waktu 20 detik. Kecepatan anak bersepeda adalah', '12,5 m/s', '7,5 m/s', '5,0 m/s', '2,0 m/s', 'C', NULL, '-', '2022-06-24', 17, '1111222233334455', NULL, 2),
+(110, 'Pada saat menendang tembok dengan sepatu, maka kaki kita terasa sakit. Hal ini menunjukkan bahwa ….', 'gaya reaksi yang membuat kaki menjadi sakit', 'tidak ada gaya reaksi pada kaki', 'Hukum III Newton tidak berlaku', 'Hanya ada gaya aksi berupa gaya otot yang membuat kaki mampu menendang', 'A', NULL, '-', '2022-06-24', 17, '1111222233334455', NULL, 2),
+(111, 'Buku bermassa 600 gram jatuh kelantai. Pada peristiwa tersebut, bumi menarik buku dengan gaya …', '6000 N', '600 N', '60 N', '6 N', 'D', NULL, '-', '2022-06-24', 17, '1111222233334455', NULL, 2),
+(112, 'Berdasarkan bahan penyusunnya, tulang dikelompokkan menjadi ….', 'tulang keras dan tulang pendek', 'tulang pipa dan tulang pipih', 'tulang rawan dan tulang keras', 'tulang tengkorak dan tulang badan', 'C', NULL, '-', '2022-06-24', 17, '1111222233334455', NULL, 2),
+(113, 'Menurut bentuknya ruas tulang belakang termasuk tulang ….', 'pipa', 'pipih', 'pendek', 'sejati', 'C', NULL, '-', '2022-06-24', 17, '1111222233334455', NULL, 2),
+(119, 'Apabila otot trisep berkontraksi, maka yang akan terjadi adalah ….', 'Otot bisep kontraksi, lengan bawah turun', 'Otot bisep relaksasi, lengan bawah turun', 'Otot bisep kontraksi, lengan bawah naik', 'Otot bisep relaksasi, lengan bawah naik', 'B', NULL, '-', '2022-06-24', 35, '1111222233334455', NULL, 2),
+(120, 'Berikut ini merupakan fungsi rangka manusia, kecuali ....', 'Sebagai alat gerak pasif', 'Pelindung alat-alat tubuh yang vital', 'Sebagai tempat melekatnya otot rangka', 'Alat gerak aktif', 'A', NULL, '-', '2022-06-24', 35, '1111222233334455', NULL, 2),
+(121, 'Berikut ini yang tergolong tulang pipa adalah…', 'Tulang paha, tulang betis dan tulang kering', 'Tulang leher, tulang punggung dan tulang rusuk', 'Tulang lengan atas, tulang hasta dan jari-jari', 'Tulang dahi, tulang ubun-ubun dan tulang kepala belakang', 'A', NULL, '-', '2022-06-24', 35, '1111222233334455', NULL, 2),
+(122, 'Berikut ini merupakan pernyataan yang benar tentang sifat istimewa otot jantung, adalah....', 'Bentuknya seperti otot lurik, cara kerjanya seperti otot jantung, di luar kesadaran', 'Bentuknya seperti otot polos tapi cara kerjanya seperti otot lurik', 'Bentuknya dan cara kerjanya seperti otot polos, di luar kesadaran', 'Menyusun alat-alat dalam dan bekerja di bawah kesadaran', 'c', NULL, '-', '2022-06-24', 35, '1111222233334455', NULL, 2),
+(123, 'Burung dapat terbang melayang di udara disebabkan alasan-alasan berikut, kecuali ', 'memiliki sayap berbentuk airfoil', 'memiliki tubuh yang ringan dan kuat', 'memiliki sayap yang pendek', 'adanya gaya dorong k atas dan ke bawah', 'C', NULL, '-', '2022-06-24', 36, '1111222233334455', NULL, 2),
+(124, 'Hewan-hewan darat akan memanfaatkan hal-hal berikut untuk melakukan gerak dengan cepat, kecuali ….', 'memiliki tubuh yang ramping', 'memiliki susunan tulang yang kuat', 'memiliki otot yang kuat', 'ukuran tubuh yang besar', 'D', NULL, '-', '2022-06-24', 36, '1111222233334455', NULL, 2),
+(125, 'Gajah memiliki inersia yang jauh lebih besar dibandingkan rusa, karena ….', 'gajah memiliki bobot tubuh yang besar', 'gajah memiliki ukuran kaki yang besar untuk berjalan cepat', 'rusa memiliki tanduk yang membantu dalam bergerak', 'ukuran tubuh rusa tidak memengaruhi inersia', 'A', NULL, '-', '2022-06-24', 36, '1111222233334455', NULL, 2),
+(126, 'Sekumpulan sel yang memiliki bentuk dan fungsi yang sama disebut …', 'sel', 'jaringan', 'organ', 'sistem organ', 'B', NULL, '-', '2022-06-24', 37, '1111222233334455', NULL, 2),
+(127, 'Berikut ini adalah contoh jaringan ….', 'Daun, batang, palisade', 'Epidermis, xilem, floem', 'Tangan, kaki, otot lurik', 'Endodermis, epitel, jantung', 'B', NULL, '-', '2022-06-24', 37, '1111222233334455', NULL, 2),
+(128, 'Berikut ini, bagian-bagian akar yang dilalui oleh air tanah secara berturut-turut adalah …', 'Epidermis buluakar – parenkim – endodermis – xilemaker', 'Epidermis buluakar – endodermis – parenkim – xilemaker', 'Epidermis buluakar – kambium – parenkim – xilemaker', 'Kulit luar – kambium – endodermis – xilemaker', 'A', NULL, '-', '2022-06-24', 37, '1111222233334455', NULL, 2),
+(129, 'Tekanan udara di suatu puncak gunung adalah 55 cmHg. Berapa ketinggian gunung dari permukaan laut?', '1200 m', '1000 m', '800 m', '2100 m', 'D', NULL, 'h = (tekanan udara normal – tekanan pada ketinggian h) x 100 m\n\n= (76-55) x 100 m = 2100 m', '2022-06-24', 42, '1111222233334455', NULL, 2),
+(130, 'Alat untuk mengukur tekanan darah adalah…', 'Sfigmomanometer atau tensimeter', 'termometer', 'amperemeter', 'aliran darah', 'A', NULL, '-', '2022-06-24', 42, '1111222233334455', NULL, 2),
+(131, 'Fakor – faktor yang memengaruhi besarnya tekanan adalah', 'Gaya tekanan dan massa benda', 'Gaya tekanan dan gaya gravitasi\n', 'Luas bidang tekanan dan gaya tekan', 'Luas bidang tekan dan gaya gravitasi', 'C', NULL, '-', '2022-06-24', 42, '1111222233334455', NULL, 2),
+(132, 'Upaya yang dapat dilakukan untuk mendapatkan tekanan yang besar adalah …', 'Mengurangi gaya tekan dan memperbesar luas bidang', 'Mengurangi gaya tekan dan memperkecil luas bidang', 'Meningkatkan gaya tekan dan memperbesar luas bidang', 'Meningkatkan gaya tekan dan memperkecil luas bidang', 'D', NULL, '-', '2022-06-24', 42, '1111222233334455', NULL, 2),
+(133, 'Berikut ini yang tidak termasuk alat ekskresi adalah ', 'hati', 'kulit', 'ginjal', 'usus besar', 'D', NULL, '-', '2022-06-24', 57, '1111222233334455', NULL, 2),
+(134, 'Pernyataan berikut ini yang tidak berhubungan dengan sistem pengeluaran manusia adalah ....', 'ginjal menghasilkan urine', 'kulit menghasilkan keringat', 'pankreas menghasilkan enzim amilase', 'bagian kulit yang berperan sebagai alat ekskresi adalah kelenjar keringat', 'C', NULL, 'Sistem ekskresi adalah kemampuan untuk menjaga keseimbangan tubuh dengan cara membuang bahan-bahan sisa metabolisme yang dikeluarkan oleh sel.', '2022-06-24', 57, '1111222233334455', NULL, 2),
+(135, 'Sisa penyaringan pada proses filtrasi menghasilkan urine yang masih mengandung zat yang berguna bagi tubuh. Berikut ini yang bukan merupakan zat yang terdapat pada urine hasil proses filtrasi adalah ..', 'glukosa', 'asam amino', 'sel darah merah', 'garam-garam mineral', 'C', NULL, '-', '2022-06-24', 57, '1111222233334455', NULL, 2),
+(136, 'Sisa metabolisme yang dikeluarkan melalui paru-paru adalah ....', 'urea dan uap air', 'garam dapur dan air', 'asam amino dan amonia', 'karbon dioksida dan uap air', 'D', NULL, '-', '2022-06-24', 57, '1111222233334455', NULL, 2),
+(137, 'Jaringan permanen adalah jaringan meristem yang telah mengalami diferensiasi dan spesialisasi. Berikut ini merupakan jaringan permanen pada tumbuhan kecuali ….', 'Jaringan parenkim', 'Jaringan penyokong', 'Jaringan pengangkut', 'Jaringan promeristem', 'D', NULL, '-', '2022-06-24', 86, '1111222233334455', NULL, 2),
+(138, 'Kapas yang dapat dijadikan benang untuk kain merupakan modifikasi dari sel ….', 'Parenkim', 'Kolenkim', 'Epidermis', 'Sklerenkim', 'C', NULL, '-', '2022-06-24', 86, '1111222233334455', NULL, 2),
+(139, 'Endodermis pada penampang melintang akar tanaman Mangifera indica terdapat di ….', 'Bawah jaringan epidermis', 'Tengah jaringan korteks', 'Antara korteks dan silider pusat', 'Sebelah dalam kambium', 'C', NULL, '-', '2022-06-24', 86, '1111222233334455', NULL, 2),
+(140, 'Seorang siswa melakukan pengamatan jaringan meristem. Ciri-ciri berikut yang diamati oleh siswa tersebut adalah ….', 'Berbentuk pipih, aktif membelah, memiliki fungsi sebagai pelindung', 'Berbentuk dan ukuran sama, aktif membelah, belum memiliki fungsi khusus', 'Berbentuk segi enam atau persegi panjang, aktif membelah, ditemukan pada setiap organ', 'Berbentuk seragam kecil, aktif membelah, belum memiliki fungsi khusus', 'B', NULL, '-', '2022-06-24', 86, '1111222233334455', NULL, 2),
+(141, 'Sebuah getaran menghasilkan frekuensi 50 Hz. Periode getarannya adalah …', '0,5 sekon', '0,2 sekon', '0,02 sekon', '0,05 sekon', 'C', NULL, '-', '2022-06-24', 103, '1111222233334455', NULL, 2),
+(142, 'Sebuah bandul sederhana bergetar selama 50 kali dalam waktu 5 sekon. Frekuensi getaran bandul tersebut adalah ….', '5 Hz', '10 Hz', '25 Hz', '50 Hz', 'B', NULL, '-', '2022-06-24', 103, '1111222233334455', NULL, 2),
+(143, 'Dua buah ayunan A dan B memiliki panjang tali yang sama. Jika ayunan pertama digetarkan dengan simpangan empat kali ayunan kedua, maka ….', 'periode A = 4 periode B', 'periode A = 1/4 periode B', 'periode A = periode B', 'periode A = 2 periode B', 'A', NULL, '-', '2022-06-24', 103, '1111222233334455', NULL, 2),
+(144, 'Pentil sebuah ban sepeda berputar dalam waktu 2 sekon untuk sekali putaran. Hal ini berarti bahwa frekuensi putarannya sebesar ….', '4 Hz', '2 Hz', '1 Hz', '0,5 Hz', 'B', NULL, '-', '2022-06-24', 103, '1111222233334455', NULL, 2),
+(152, 'benda bergerak', '50m', '30', '20', '10', 'B', NULL, '-', '2022-06-25', 17, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -944,8 +1013,12 @@ CREATE TABLE `soal_cetak` (
 --
 
 INSERT INTO `soal_cetak` (`id_soal_cetak`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `jawaban`, `soal_img`, `alasan_jawaban`, `tgl_input`, `id_materi`, `id`, `alasan_jawaban_img`, `id_status_soal`) VALUES
-(55, 'Sebuah mobil dengan kecepatan 72 km/jam. Kecepatan mobil tersebut jika dinyatakan dalam SI adalah ….', '2 m/s', '20 m/s', '200 m/s', '1.800 m/s', 'B', NULL, '-', '2022-06-06', 17, 4, NULL, 2),
-(56, 'Gerak benda yang mengalami perlambatan  …', 'kelajuannya berkurang dengan cara tidak teratur', 'kelajuannya berkurang dengan teratur', 'kelajuannya tidak berpengaruh', 'tidak akan pernah berhenti', 'A', NULL, '-', '2022-06-06', 17, 4, NULL, 2);
+(117, 'Pada saat menendang tembok dengan sepatu, maka kaki kita terasa sakit. Hal ini menunjukkan bahwa ….', 'gaya reaksi yang membuat kaki menjadi sakit', 'tidak ada gaya reaksi pada kaki', 'Hukum III Newton tidak berlaku', 'Hanya ada gaya aksi berupa gaya otot yang membuat kaki mampu menendang', 'A', NULL, '-', '2022-06-24', 17, 24, NULL, 2),
+(118, 'Buku bermassa 600 gram jatuh kelantai. Pada peristiwa tersebut, bumi menarik buku dengan gaya …', '6000 N', '600 N', '60 N', '6 N', 'D', NULL, '-', '2022-06-24', 17, 24, NULL, 2),
+(119, 'Jarak dari kota A ke kota B adalah 115 km. Pak Budi berangkat dari kota A pukul 09.00 menuju kota B menggunakan kendaraan dengan kecepatan 50 km/jam. Pak Budi akan sampai ke kota B pada pukul ….', '11.15', '11.18', '11.20', '11.30', 'A', NULL, '-', '2022-06-06', 17, 24, NULL, 2),
+(120, 'Berdasarkan morfologi dan fungsinya, jaringan otot pada manusia dibagi menjadi 3 yaitu ….', 'otot lurik, otot jantung dan otot serat lintang', 'otot jantung, otot lurik dan otot bergaris', 'otot lurik, otot polos dan otot jantung', 'miofibril, otot volunter dan otot involunter ', 'C', NULL, '-', '2022-06-06', 35, 24, NULL, 2),
+(121, 'Daniel sedang mengamati awetan preparat dinding usus halus hewan sapi. Pada pengamatannya didapatkan bahwa awetan tersebut tersusun atas sel yang berbentuk gelendong dengan ujung yang meruncing, dan juga memiliki nukleus yang berada ditengah sel. Berikut ini preparat yang memiliki struktur yang hampir sama dengan struktur dinding usus halus sapi diatas adalah ….', 'Dinding organ jantung', 'Otot bisep pada manusia', 'Sfingter anus', 'Dinding lambung', 'D', NULL, '-', '2022-06-06', 35, 24, NULL, 2),
+(122, 'Berikut ini merupakan pernyataan yang benar tentang sifat istimewa otot jantung, adalah....', 'Bentuknya seperti otot lurik, cara kerjanya seperti otot jantung, di luar kesadaran', 'Bentuknya seperti otot polos tapi cara kerjanya seperti otot lurik', 'Bentuknya dan cara kerjanya seperti otot polos, di luar kesadaran', 'Menyusun alat-alat dalam dan bekerja di bawah kesadaran', 'c', NULL, '-', '2022-06-24', 35, 24, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -1001,7 +1074,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `email`, `username`, `nuptk`, `id_mgmp`, `user_image`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (4, 'ferdianrafli125@gmail.com', 'admin1', NULL, NULL, 'user-3.png', '$2y$10$SDZZ9zcxf3/uKGN2UfD5ZeUlukHvXpZ6rkfRmBWmkAGPrZgGMysMW', NULL, '2022-03-16 07:06:39', NULL, NULL, NULL, NULL, 1, 0, '2022-02-05 19:06:27', '2022-05-06 06:38:36', NULL),
 (21, 'tokosundip@gmail.com', 'mgmpIPA', NULL, 24, 'user-3.png', '$2y$10$qj9Noj6uJ6qw/ApzIUfe9.mAFgVqOHw503ka/f6NyPVMsYtZJp11m', 'ea4ed9700667df3c75152062901fb3a4', NULL, '2022-06-05 20:18:38', NULL, NULL, NULL, 1, 0, '2022-05-06 06:57:17', '2022-06-05 19:18:38', NULL),
-(22, 'soalbank7@gmail.com', 'mgmpIPS', NULL, 25, 'user-3.png', '$2y$10$naoZKSI6sBHTnhXgHqgWUeOKCQdUpPAWVhdgaFLZ9VpN9gRvRDP9q', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-05-23 05:34:15', '2022-05-23 05:34:15', NULL),
+(22, 'soalbank7@gmail.com', 'mgmpIPS', NULL, 25, 'user-3.png', '$2y$10$naoZKSI6sBHTnhXgHqgWUeOKCQdUpPAWVhdgaFLZ9VpN9gRvRDP9q', '15b0f1419bec97f6e54e8dcd90f746e8', NULL, '2022-06-19 19:18:08', NULL, NULL, NULL, 1, 0, '2022-05-23 05:34:15', '2022-06-19 18:18:08', NULL),
 (24, 'ferdianrafli32@gmail.com', 'guruIPA1', '1111222233334455', NULL, 'user-3.png', '$2y$10$65fBb/zGngaf4zjTAV8r2.T7CwFDmuONigGRCiTeDXz5Q5TOT/5C2', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-06-05 02:42:06', '2022-06-05 02:42:16', NULL),
 (25, 'rafliferdian1203@gmail.com', 'guruIPS1', '1122334455667788', NULL, 'user-3.png', '$2y$10$2s2mxMMPTZamWmo2gS1T2.IJICGw6.o7znwwunCfQ9KwCG640cDx.', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-06-05 02:43:11', '2022-06-05 02:43:23', NULL);
 
@@ -1159,7 +1232,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `auth_groups`
@@ -1171,7 +1244,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -1195,13 +1268,13 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT for table `mapel`
 --
 ALTER TABLE `mapel`
-  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id_materi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id_materi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1213,13 +1286,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `soal`
 --
 ALTER TABLE `soal`
-  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT for table `soal_cetak`
 --
 ALTER TABLE `soal_cetak`
-  MODIFY `id_soal_cetak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_soal_cetak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `status_soal`
@@ -1231,7 +1304,7 @@ ALTER TABLE `status_soal`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables

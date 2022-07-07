@@ -1,7 +1,7 @@
 <?php if (in_groups('admin')) { ?>
-    <?= $this->extend('templates/template_admin'); ?>
+<?= $this->extend('templates/template_admin'); ?>
 <?php } else { ?>
-    <?= $this->extend('templates/template_guru'); ?>
+<?= $this->extend('templates/template_guru'); ?>
 <?php }; ?>
 <?= $this->section('content'); ?>
 <div class="blok-full edit__soal">
@@ -14,12 +14,12 @@
                 </button>
             </a>
             <?php if (in_groups('admin')) { ?>
-                <i class="fas fa-chevron-right"></i>
-                <a href="/mapel/mapel" class="text-black">
-                    <button class="btn back">
-                        Mata pelajaran
-                    </button>
-                </a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="/mapel/mapel" class="text-black">
+                <button class="btn back">
+                    Mata pelajaran
+                </button>
+            </a>
             <?php } ?>
             <i class="fas fa-chevron-right"></i>
             <a href="/soal/daftar_soal/<?= $soal['id_mapel']; ?>" class="text-black">
@@ -53,7 +53,8 @@
         <h1 class="text__blue1 text-center">Formulir Soal</h1>
     </div>
     <div class="col-md-12 mb-3">
-        <form action="/soal/simpan_edit_soal/<?= $soal['id_soal']; ?>" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <form action="/soal/simpan_edit_soal/<?= $soal['id_soal']; ?>" method="post" class="needs-validation"
+            enctype="multipart/form-data" novalidate>
             <input type="hidden" name="gambar_lama" value="<?= $soal['soal_img']; ?>">
             <input type="hidden" name="alasan_jawaban_img_lama" value="<?= $soal['alasan_jawaban_img']; ?>">
 
@@ -64,10 +65,13 @@
             </div>
             <div class="card-body p-4">
                 <div class="mb-3 row">
-                    <label for="soal" class="col-md-2 text-md-end col-form-label">Soal <span class="required-label">*</span>
+                    <label for="soal" class="col-md-2 text-md-end col-form-label">Soal <span
+                            class="required-label">*</span>
                     </label>
                     <div class="col-lg-9 col-md-10">
-                        <textarea required autofocus type="text" name="soal" class="form-control rounded-3 <?= ($validation->hasError('soal')) ? 'is-invalid' : ''; ?>" id="soal" cols="30" rows="3"><?= $soal['soal']; ?></textarea>
+                        <textarea required autofocus type="text" name="soal"
+                            class="form-control rounded-3 <?= ($validation->hasError('soal')) ? 'is-invalid' : ''; ?>"
+                            id="soal" cols="30" rows="3"><?= $soal['soal']; ?></textarea>
                         <div class="invalid-feedback">
                             <?= ($validation->getError('soal') == '') ? 'Bagian Soal wajib diisi' : $validation->getError('soal'); ?>
                         </div>
@@ -75,12 +79,16 @@
                 </div>
                 <!-- end soal -->
                 <div class="mb-3 row">
-                    <label for="materi" class="col-md-2 text-md-end col-form-label">Materi Soal<span class="required-label">*</span> </label>
+                    <label for="materi" class="col-md-2 text-md-end col-form-label">Materi Soal<span
+                            class="required-label">*</span> </label>
                     <div class="col-lg-9 col-md-10">
-                        <select required class="form-select rounded-3 <?= ($validation->hasError('materi')) ? 'is-invalid' : ''; ?>" id="materi" name="materi">
+                        <select required
+                            class="form-select rounded-3 <?= ($validation->hasError('materi')) ? 'is-invalid' : ''; ?>"
+                            id="materi" name="materi">
                             <option selected hidden value="">Pilih opsi ...</option>
                             <?php foreach ($materi as $list_materi) : ?>
-                                <option <?= ($list_materi['id_materi'] == $soal['id_materi']) ? 'selected' : '' ?> value="<?= $list_materi['id_materi']; ?>"><?= $list_materi['nama_materi']; ?></option>
+                            <option <?= ($list_materi['id_materi'] == $soal['id_materi']) ? 'selected' : '' ?>
+                                value="<?= $list_materi['id_materi']; ?>"><?= $list_materi['nama_materi']; ?></option>
                             <?php endforeach; ?>
                         </select>
                         <div class="invalid-feedback">
@@ -95,28 +103,37 @@
                     <div class="col-lg-9 col-md-10 row ">
                         <div class="col-2 input-file input-file-image">
                             <?php if ($soal['soal_img'] != null) { ?>
-                                <img class="img-upload-preview" width="100" height="100" src="<?= base_url(); ?>/assets/images/soal/<?= $soal['soal_img']; ?>">
+                            <img class="img-upload-preview" width="100" height="100"
+                                src="<?= base_url(); ?>/assets/images/soal/<?= $soal['soal_img']; ?>">
                             <?php } else { ?>
-                                <img class="img-upload-preview" width="100" height="100" src="https://via.placeholder.com/100">
+                            <img class="img-upload-preview" width="100" height="100"
+                                src="https://via.placeholder.com/100">
                             <?php } ?>
-                            <input hidden class="form-control form-control-file <?= ($validation->hasError('soal_img')) ? 'is-invalid' : ''; ?>" type="file" id="soal_img" name="soal_img" accept="image/*" value="<?= $soal['soal_img']; ?>">
+                            <input hidden
+                                class="form-control form-control-file <?= ($validation->hasError('soal_img')) ? 'is-invalid' : ''; ?>"
+                                type="file" id="soal_img" name="soal_img" accept="image/*"
+                                value="<?= $soal['soal_img']; ?>">
+                            <div class="invalid-feedback">
+                                <?= ($validation->getError('soal_img') == '') ? 'Bagian Gambar Soal wajib diisi' : $validation->getError('soal_img'); ?>
+                            </div>
                         </div>
                         <div class="col-3 align-self-center">
-                            <label for="soal_img" class="btn btn-primary btn-round mt-2"><i class="fa fa-file-image text-white"></i>
+                            <label for="soal_img" class="btn btn-primary btn-round mt-2"><i
+                                    class="fa fa-file-image text-white"></i>
                                 Unggah gambar</label>
                             <small class="m-0">Maksimal 2 MB</small>
-                        </div>
-                        <div class="invalid-feedback">
-                            <?= ($validation->getError('soal_img') == '') ? 'Bagian Gambar Soal wajib diisi' : $validation->getError('soal_img'); ?>
                         </div>
                     </div>
                 </div>
                 <!-- end soal image -->
                 <div class="mb-3 row">
-                    <label for="opsi_a" class="col-md-2 text-md-end col-form-label">Opsi A <span class="required-label">*</span>
+                    <label for="opsi_a" class="col-md-2 text-md-end col-form-label">Opsi A <span
+                            class="required-label">*</span>
                     </label>
                     <div class="col-lg-9 col-md-10">
-                        <textarea required cols="30" rows="3" type="text" name="opsi_a" class="form-control rounded-3 <?= ($validation->hasError('opsi_a')) ? 'is-invalid' : ''; ?>" id="opsi_a"><?= old('opsi_a'); ?><?= $soal['opsi_a']; ?></textarea>
+                        <textarea required cols="30" rows="3" type="text" name="opsi_a"
+                            class="form-control rounded-3 <?= ($validation->hasError('opsi_a')) ? 'is-invalid' : ''; ?>"
+                            id="opsi_a"><?= old('opsi_a'); ?><?= $soal['opsi_a']; ?></textarea>
                         <div class="invalid-feedback">
                             <?= ($validation->getError('opsi_a') == '') ? 'Bagian Opsi A wajib diisi' : $validation->getError('opsi_a'); ?>
                         </div>
@@ -124,10 +141,13 @@
                 </div>
                 <!-- end opsi A -->
                 <div class="mb-3 row">
-                    <label for="opsi_b" class="col-md-2 text-md-end col-form-label">Opsi B <span class="required-label">*</span>
+                    <label for="opsi_b" class="col-md-2 text-md-end col-form-label">Opsi B <span
+                            class="required-label">*</span>
                     </label>
                     <div class="col-lg-9 col-md-10">
-                        <textarea required cols="30" rows="3" type="text" name="opsi_b" class="form-control rounded-3 <?= ($validation->hasError('opsi_b')) ? 'is-invalid' : ''; ?>" id="opsi_b"><?= old('opsi_b'); ?><?= $soal['opsi_b']; ?></textarea>
+                        <textarea required cols="30" rows="3" type="text" name="opsi_b"
+                            class="form-control rounded-3 <?= ($validation->hasError('opsi_b')) ? 'is-invalid' : ''; ?>"
+                            id="opsi_b"><?= old('opsi_b'); ?><?= $soal['opsi_b']; ?></textarea>
                         <div class="invalid-feedback">
                             <?= ($validation->getError('opsi_b') == '') ? 'Bagian Opsi B wajib diisi' : $validation->getError('opsi_b'); ?>
                         </div>
@@ -135,10 +155,13 @@
                 </div>
                 <!-- end opsi B -->
                 <div class="mb-3 row">
-                    <label for="opsi_c" class="col-md-2 text-md-end col-form-label">Opsi C <span class="required-label">*</span>
+                    <label for="opsi_c" class="col-md-2 text-md-end col-form-label">Opsi C <span
+                            class="required-label">*</span>
                     </label>
                     <div class="col-lg-9 col-md-10">
-                        <textarea required cols="30" rows="3" type="text" name="opsi_c" class="form-control rounded-3 <?= ($validation->hasError('opsi_c')) ? 'is-invalid' : ''; ?>" id="opsi_c"><?= old('opsi_c'); ?><?= $soal['opsi_c']; ?></textarea>
+                        <textarea required cols="30" rows="3" type="text" name="opsi_c"
+                            class="form-control rounded-3 <?= ($validation->hasError('opsi_c')) ? 'is-invalid' : ''; ?>"
+                            id="opsi_c"><?= old('opsi_c'); ?><?= $soal['opsi_c']; ?></textarea>
                         <div class="invalid-feedback">
                             <?= ($validation->getError('opsi_c') == '') ? 'Bagian Opsi C wajib diisi' : $validation->getError('opsi_c'); ?>
                         </div>
@@ -146,10 +169,13 @@
                 </div>
                 <!-- end opsi C -->
                 <div class="mb-3 row">
-                    <label for="opsi_d" class="col-md-2 text-md-end col-form-label">Opsi D <span class="required-label">*</span>
+                    <label for="opsi_d" class="col-md-2 text-md-end col-form-label">Opsi D <span
+                            class="required-label">*</span>
                     </label>
                     <div class="col-lg-9 col-md-10">
-                        <textarea required cols="30" rows="3" type="text" name="opsi_d" class="form-control rounded-3 <?= ($validation->hasError('opsi_d')) ? 'is-invalid' : ''; ?>" id="opsi_d"><?= old('opsi_d'); ?><?= $soal['opsi_d']; ?></textarea>
+                        <textarea required cols="30" rows="3" type="text" name="opsi_d"
+                            class="form-control rounded-3 <?= ($validation->hasError('opsi_d')) ? 'is-invalid' : ''; ?>"
+                            id="opsi_d"><?= old('opsi_d'); ?><?= $soal['opsi_d']; ?></textarea>
                         <div class="invalid-feedback">
                             <?= ($validation->getError('opsi_d') == '') ? 'Bagian Opsi D wajib diisi' : $validation->getError('opsi_d'); ?>
                         </div>
@@ -159,9 +185,12 @@
 
 
                 <div class="mb-3 row">
-                    <label for="jawaban" class="col-md-2 text-md-end col-form-label">Jawaban Benar <span class="required-label">*</span> </label>
+                    <label for="jawaban" class="col-md-2 text-md-end col-form-label">Jawaban Benar <span
+                            class="required-label">*</span> </label>
                     <div class="col-lg-9 col-md-10">
-                        <select required class="form-select rounded-3 <?= ($validation->hasError('jawaban')) ? 'is-invalid' : ''; ?>" id="jawaban" name="jawaban">
+                        <select required
+                            class="form-select rounded-3 <?= ($validation->hasError('jawaban')) ? 'is-invalid' : ''; ?>"
+                            id="jawaban" name="jawaban">
                             <option selected hidden value="">Pilih opsi ...</option>
                             <option <?= ($soal['jawaban'] == 'A') ? 'selected' : ''; ?> value="A">A</option>
                             <option <?= ($soal['jawaban'] == 'B') ? 'selected' : ''; ?> value="B">B</option>
@@ -175,10 +204,13 @@
                 </div>
                 <!-- end jawaban -->
                 <div class="mb-3 row">
-                    <label for="opsi_d" class="col-md-2 text-md-end col-form-label">Text alasan jawaban <span class="required-label">*</span>
+                    <label for="opsi_d" class="col-md-2 text-md-end col-form-label">Text alasan jawaban <span
+                            class="required-label">*</span>
                     </label>
                     <div class="col-lg-9 col-md-10">
-                        <textarea required cols="30" rows="3" type="text" name="alasan_jawaban" class="form-control rounded-3 <?= ($validation->hasError('alasan_jawaban')) ? 'is-invalid' : ''; ?>" id="alasan_jawaban"><?= old('alasan_jawaban'); ?><?= $soal['alasan_jawaban']; ?></textarea>
+                        <textarea required cols="30" rows="3" type="text" name="alasan_jawaban"
+                            class="form-control rounded-3 <?= ($validation->hasError('alasan_jawaban')) ? 'is-invalid' : ''; ?>"
+                            id="alasan_jawaban"><?= old('alasan_jawaban'); ?><?= $soal['alasan_jawaban']; ?></textarea>
                         <div class="invalid-feedback">
                             <?= ($validation->getError('alasan_jawaban') == '') ? 'Bagian alasan jawaban wajib diisi' : $validation->getError('alasan_jawaban'); ?>
                         </div>
@@ -191,14 +223,20 @@
                     <div class="col-lg-9 col-md-10 row ">
                         <div class="col-2 input-file input-file-image">
                             <?php if ($soal['alasan_jawaban_img'] != null) { ?>
-                                <img class="img-upload-preview" width="100" height="100" src="<?= base_url(); ?>/assets/images/soal/<?= $soal['alasan_jawaban_img']; ?>">
+                            <img class="img-upload-preview" width="100" height="100"
+                                src="<?= base_url(); ?>/assets/images/soal/<?= $soal['alasan_jawaban_img']; ?>">
                             <?php } else { ?>
-                                <img class="img-upload-preview" width="100" height="100" src="https://via.placeholder.com/100">
+                            <img class="img-upload-preview" width="100" height="100"
+                                src="https://via.placeholder.com/100">
                             <?php } ?>
-                            <input hidden class="form-control form-control-file <?= ($validation->hasError('alasan_jawaban_img')) ? 'is-invalid' : ''; ?>" type="file" id="alasan_jawaban_img" name="alasan_jawaban_img" accept="image/*" value="<?= $soal['alasan_jawaban_img']; ?>">
+                            <input hidden
+                                class="form-control form-control-file <?= ($validation->hasError('alasan_jawaban_img')) ? 'is-invalid' : ''; ?>"
+                                type="file" id="alasan_jawaban_img" name="alasan_jawaban_img" accept="image/*"
+                                value="<?= $soal['alasan_jawaban_img']; ?>">
                         </div>
                         <div class="col-3 align-self-center">
-                            <label for="alasan_jawaban_img" class="btn btn-primary btn-round mt-2"><i class="fa fa-file-image text-white"></i>
+                            <label for="alasan_jawaban_img" class="btn btn-primary btn-round mt-2"><i
+                                    class="fa fa-file-image text-white"></i>
                                 Unggah gambar</label>
                             <small class="m-0">Maksimal 2 MB</small>
                         </div>
@@ -222,7 +260,8 @@
             <div class="card-action p-4">
                 <div class="row">
                     <div class="col-12 justify-content-end d-flex">
-                        <a href="/soal/daftar_soal/<?= $materi[0]['id_mapel']; ?>" class="btn btn-danger me-4 rounded-pill btn-submit fs-7">
+                        <a href="/soal/daftar_soal/<?= $materi[0]['id_mapel']; ?>"
+                            class="btn btn-danger me-4 rounded-pill btn-submit fs-7">
                             Batal
                         </a>
                         <button type="submit" class="btn btn-primary rounded-pill btn-submit fs-7">Edit</button>

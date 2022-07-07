@@ -41,20 +41,20 @@ use Myth\Auth\Controllers\AuthController;
 
                 <div class="card-body">
                     <!-- alert kelola akun -->
-                    <?php if (session()->getFlashdata('pesan-tambah-akun')) : ?>
-                    <div class="alert alert-success" role="alert">
-                        <?= session()->getFlashdata('pesan-tambah-akun'); ?>
-                    </div>
+                    <?php if (session()->getFlashdata('message')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?= session()->getFlashdata('message'); ?>
+                        </div>
                     <?php endif; ?>
                     <?php if (session()->getFlashdata('pesan-edit-akun')) : ?>
-                    <div class="alert alert-success" role="alert">
-                        <?= session()->getFlashdata('pesan-edit-akun'); ?>
-                    </div>
+                        <div class="alert alert-success" role="alert">
+                            <?= session()->getFlashdata('pesan-edit-akun'); ?>
+                        </div>
                     <?php endif; ?>
                     <?php if (session()->getFlashdata('pesan-hapus-akun')) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?= session()->getFlashdata('pesan-hapus-akun'); ?>
-                    </div>
+                        <div class="alert alert-danger" role="alert">
+                            <?= session()->getFlashdata('pesan-hapus-akun'); ?>
+                        </div>
                     <?php endif; ?>
                     <!-- end alert kelola akun -->
 
@@ -72,31 +72,27 @@ use Myth\Auth\Controllers\AuthController;
                             </thead>
                             <tbody>
                                 <?php foreach ($users as $user) : ?>
-                                <tr>
-                                    <td><?= $user['userid']; ?></td>
-                                    <td><?= $user['email']; ?></td>
-                                    <td><?= $user['username']; ?></td>
-                                    <td><?= ($user['nuptk'] == null) ? 'belum ada' : $user['nuptk']; ?></td>
-                                    <td><?= ucfirst($user['name']);  ?></td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <a href="/user/edit_akun/<?= $user['userid']; ?>" class="d-flex">
-                                                <button type="button" data-bs-toggle="tooltip" title=""
-                                                    class="btn btn-link  btn-lg" data-original-title="Lihat dan Edit">
-                                                    <i class="fa fa-edit text__blue1"></i>
-                                                </button>
-                                            </a>
-                                            <a href="/user/hapus_akun/<?= $user['userid']; ?>"
-                                                class="d-flex hapus_akun">
-                                                <button type="button" data-bs-toggle="tooltip" title="Hapus"
-                                                    data-bs-placement="top" class="btn btn-link"
-                                                    data-original-title="Hapus">
-                                                    <i class="far fa-trash-alt text-danger"></i>
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td><?= $user['userid']; ?></td>
+                                        <td><?= $user['email']; ?></td>
+                                        <td><?= $user['username']; ?></td>
+                                        <td><?= ($user['nuptk'] == null) ? 'belum ada' : $user['nuptk']; ?></td>
+                                        <td><?= ucfirst($user['name']);  ?></td>
+                                        <td>
+                                            <div class="form-button-action">
+                                                <a href="/user/edit_akun/<?= $user['userid']; ?>" class="d-flex">
+                                                    <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link  btn-lg" data-original-title="Lihat dan Edit">
+                                                        <i class="fa fa-edit text__blue1"></i>
+                                                    </button>
+                                                </a>
+                                                <a href="/user/hapus_akun/<?= $user['userid']; ?>" class="d-flex hapus_akun">
+                                                    <button type="button" data-bs-toggle="tooltip" title="Hapus" data-bs-placement="top" class="btn btn-link" data-original-title="Hapus">
+                                                        <i class="far fa-trash-alt text-danger"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

@@ -62,8 +62,7 @@
                     </div>
                     <!-- end NUPTK -->
                     <div class="mb-3 row">
-                        <label for="nip" class="col-md-2 text-md-end col-form-label">NIP <span
-                                class="required-label">*</span>
+                        <label for="nip" class="col-md-2 text-md-end col-form-label">NIP
                         </label>
                         <div class="col-lg-9 col-md-10">
                             <input type="number" name="nip" max="999999999999999999"

@@ -53,8 +53,8 @@
                     <li>Format kolom harus seperti gambar dibawah ini:</li>
                     <img class="img-fluid mb-2 ms-3" src="<?= base_url(); ?>/assets/images/contoh-excel-guru.png"
                         alt="">
-                    <li>Kolom yang wajib diisi : NUPTK, NPSN, nama_guru, id_mapel</li>
-                    <li>Kolom id_mapel harus diisi dengan angka dan diambil dari nomer urut materi dibawah
+                    <li>Kolom yang wajib diisi : NUPTK, NPSN, Nama Guru, No Mata Pelajaran</li>
+                    <li>Kolom No Mata Pelajaran harus diisi dengan angka dan diambil dari nomer urut materi dibawah
                         ini
                         :
                         <?php $i = 1; ?>

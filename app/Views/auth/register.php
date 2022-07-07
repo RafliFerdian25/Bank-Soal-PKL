@@ -50,8 +50,8 @@
                             <div class="form-floating col-lg-6 mb-3 mb-lg-0">
                                 <input type="password" name="password"
                                     class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>"
-                                    id="floatingPassword" placeholder="<?= lang('Auth.password') ?>" autocomplete="off">
-                                <label class="ms-3" for="password">Password</label>
+                                    id="floatingPassword" placeholder="Kata sandi" autocomplete="off">
+                                <label class="ms-3" for="password">Kata sandi</label>
                             </div>
                             <!-- end password -->
                             <div class="form-floating  col-lg-6">
@@ -59,7 +59,7 @@
                                     class="form-control  <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>"
                                     id="floatingPassword" placeholder="<?= lang('Auth.repeatPassword') ?>"
                                     autocomplete="off">
-                                <label class="ms-3" for="pass_confirm">Ulangi Password</label>
+                                <label class="ms-3" for="pass_confirm">Ulangi kata sandi</label>
                             </div>
                             <!-- end repeat password -->
                         </div>

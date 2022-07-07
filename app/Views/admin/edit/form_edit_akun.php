@@ -68,12 +68,12 @@
                                 </div>
                             </div>
                             <!-- end ID -->
-                            <div class="mb-3 row">
-                                <label for="id" class="col-md-4 text-md-start ps-4 col-form-label">NUPTK
+                            <div class="mb-3 row" id="input-nuptk">
+                                <label for="id" class="col-md-4 text-md-start ps-4 col-form-label">NUPTK  <span class="required-label">*</span>
                                 </label>
                                 <div class="col-md-8">
-                                    <select class="form-select rounded-3" id="nuptk" name="nuptk">
-                                        <option value=""></option>
+                                    <select class="form-select rounded-3 <?= ($validation->hasError('nuptk')) ? 'is-invalid' : ''; ?>" id="nuptk" name="nuptk">
+                                        <!-- <option value=""></option> -->
                                         <?php if ($guru_sebelum != null) : ?>
                                         <option selected value="<?= $guru_sebelum['nuptk']; ?>">
                                             <?= $guru_sebelum['nuptk']; ?> - <?= $guru_sebelum['nama_guru']; ?></option>
@@ -83,6 +83,9 @@
                                             <?= $guru['nuptk']; ?> - <?= $guru['nama_guru']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
+                                    <div class="invalid-feedback">
+                                        <?= ($validation->getError('nuptk') == '') ? 'Bagian nuptk wajib diisi' : $validation->getError('nuptk'); ?>
+                                    </div>
                                 </div>
                             </div>
                             <!-- NIP -->
@@ -131,7 +134,7 @@
                                         <label class="btn btn-primary rounded-pill" for="mgmp">MGMP</label>
                                     </div>
                                     <div class="invalid-feedback">
-                                        <?= ($validation->getError('peran') == '') ? 'Bagian peran wajib diisi' : $validation->getError('username'); ?>
+                                        <?= ($validation->getError('peran') == '') ? 'Bagian peran wajib diisi' : $validation->getError('peran'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -170,15 +173,25 @@
 </div>
 
 <script>
-<?php if ($user['name'] != 'mgmp') : ?>
+<?php if ($user['name'] == 'mgmp') : ?>
+$("#input-nuptk").hide();
+<?php elseif($user['name'] == 'admin'): ?>
+    $("#input-nuptk").hide();
+$("#mgmp_mapel").hide();
+<?php else: ?>
 $("#mgmp_mapel").hide();
 <?php endif; ?>
 $("input[name='peran']").click(function() {
     console.log(this.value);
     if (this.value == 3) {
         $("#mgmp_mapel").show();
+        $("#input-nuptk").hide();
+    } else if(this.value == 1) {
+        $("#mgmp_mapel").hide();
+        $("#input-nuptk").hide();
     } else {
         $("#mgmp_mapel").hide();
+        $("#input-nuptk").show();
     }
 });
 </script>

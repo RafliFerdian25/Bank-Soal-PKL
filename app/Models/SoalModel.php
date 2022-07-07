@@ -23,6 +23,7 @@ class SoalModel extends Model
         if ($semester != null) {
             $builder->where('materi.semester', $semester);
         }
+        $builder->orderBy('tgl_input', 'DESC');
         $query = $builder->get();
         return $query;
     }
@@ -37,6 +38,7 @@ class SoalModel extends Model
         if ($semester != null) {
             $builder->where('materi.semester', $semester);
         }
+        $builder->orderBy('tgl_input', 'DESC');
         $query = $builder->get();
         return $query;
     }

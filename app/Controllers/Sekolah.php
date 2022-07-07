@@ -88,8 +88,8 @@ class Sekolah extends BaseController
             $namaLogo = 'logo-batang.png';
         } else {
             // pindahkan file ke folder image
-            $namaLogo = $logo->getName();
-            $logo->move('assets/images/logo');
+            $namaLogo = $logo->getRandomName();
+            $logo->move('assets/images/logo', $namaLogo);
         }
         $this->sekolahModel->insert([
             'npsn' => $this->request->getVar('npsn'),
@@ -127,7 +127,6 @@ class Sekolah extends BaseController
                 'npsn'      => 'required|exact_length[8]|numeric',
                 'nama'      => 'required',
                 'alamat'    => 'required',
-                'email'     => 'required|valid_email',
                 'logo'      => 'max_size[logo,2048]|is_image[logo]|mime_in[logo,image/jpg,image/jpeg,image/png]'
             ])) {
                 return redirect()->to('sekolah/edit_sekolah/' . $npsn)->withInput();
@@ -137,7 +136,6 @@ class Sekolah extends BaseController
                 'npsn'      => 'required|exact_length[8]|is_unique[sekolah.NPSN]|numeric',
                 'nama'      => 'required|is_unique[sekolah.nama]',
                 'alamat'    => 'required',
-                'email'     => 'required|valid_email',
                 'logo'      => 'max_size[logo,2048]|is_image[logo]|mime_in[logo,image/jpg,image/jpeg,image/png]'
             ])) {
                 return redirect()->to('sekolah/edit_sekolah/' . $npsn)->withInput();
@@ -154,7 +152,7 @@ class Sekolah extends BaseController
             $namaLogo = $logoLama;
         } else {
             //mengambil nama dari logo yang diinput
-            $namaLogo = $logo->getName();
+            $namaLogo = $logo->getRandomName();
             if ($logoLama != 'logo-batang.png') {
                 // pindahkan file ke folder image
                 $logo->move('assets/images/logo', $namaLogo);

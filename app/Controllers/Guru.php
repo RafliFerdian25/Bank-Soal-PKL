@@ -64,7 +64,7 @@ class Guru extends BaseController
     {
         if (!$this->validate([
             'nuptk'      => 'required|exact_length[16]|is_unique[guru.nuptk]|numeric',
-            'nip'      => 'is_unique[guru.nip]|exact_length[18]',
+            'nip'      => 'is_unique[guru.nip]',
             'nama'      => 'required',
             'npsn'    => [
                 'rules' => 'required',

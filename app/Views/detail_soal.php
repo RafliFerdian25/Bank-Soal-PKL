@@ -53,8 +53,12 @@
             <h5 class="fs-5 fw-normal text-center"><?= $soal['nama_materi']; ?></h5>
         </div>
         <div class="card-body p-5">
+            <?php if (session()->getFlashdata('pesan-edit-soal')) : ?>
+            <div class="alert alert-success" role="alert">
+                <?= session()->getFlashdata('pesan-edit-soal'); ?>
+            </div>
+            <?php endif; ?>
             <div class="soal row">
-
                 <div class="col-md-4 col-xl-3 col-12 text-center " <?= ($soal['soal_img'] == null) ? 'hidden' : '' ?>>
                     <img src="<?= base_url(); ?>/assets/images/soal/<?= $soal['soal_img']; ?>" alt=""
                         class="soal__img img-fluid me-3 mb-3 ">
