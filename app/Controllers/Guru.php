@@ -155,13 +155,19 @@ class Guru extends BaseController
             }
             // dd($excel[2]);
             $id_mapel_excel = $mapel[$excel['4'] - 1]['id_mapel'];
+            if ($excel['1'] == null || $excel['1'] == 'NULL' || $excel['1'] == 'null') {
+                $nipGuru = null;
+            } else {
+                $nipGuru = substr($excel['1'], 3);
+            }
             $data = [
-                'nuptk' => $excel['0'],
-                'nip' => $excel['1'],
+                'nuptk' => substr($excel['0'], 3),
+                'nip' => $nipGuru,
                 'npsn' => $excel['2'],
                 'nama_guru' => $excel['3'],
                 'id_mapel' => $id_mapel_excel,
             ];
+            // dd(substr($excel['0'], 3));
             // dd($data);
             $this->guruModel->insert($data);
         }

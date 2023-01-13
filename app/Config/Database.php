@@ -34,7 +34,7 @@ class Database extends Config
         'DSN'      => '',
         'hostname' => 'localhost',
         'username' => 'root',
-        'password' => '',
+        'password' => 'ramadani',
         'database' => 'bank_soal',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
